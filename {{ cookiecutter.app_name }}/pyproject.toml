@@ -45,6 +45,7 @@ test_requires = [
 ]
 
 [tool.briefcase.app.{{ cookiecutter.app_name }}.macOS]
+universal_build = true
 requires = [
 {%- if cookiecutter.gui_framework in ("Toga", "PositronDjango", "PositronStatic") %}
     "toga-cocoa~=0.3.1",
