@@ -26,7 +26,7 @@ In this workshop, we will focus on using briefcase to deploy our app. With Toga,
 Assuming that you have [created and inside a virtual environment]((https://docs.beeware.org/en/latest/tutorial/tutorial-0.html)). We will install `briefcase`, `toga`, `cookiecutter` and `Django`:
 
 ```
-$ python -m pip install briefcase toga cookiecutter Django
+python -m pip install briefcase toga cookiecutter Django
 ```
 
 ## Creating the project
@@ -34,7 +34,7 @@ $ python -m pip install briefcase toga cookiecutter Django
 Normally, if you follow the [official tutorial](https://docs.beeware.org/en/latest/tutorial/tutorial-1.html), we will create a new project using the `briefcase new` command. With that command, briefcase will generate a new project using the default template using it's CLI. However, since we want to use the positron Django template, we will use cookiecutter to create our new project:
 
 ```
-$ cookiecutter https://github.com/Cheukting/briefcase-positron-template.git
+cookiecutter https://github.com/Cheukting/briefcase-positron-template.git
 ```
 
 [This template](https://github.com/Cheukting/briefcase-positron-template) is a fork of the [original default briefcase template](https://github.com/beeware/briefcase-template). The difference is, we will have new positron options (option 6 & 7) which will come with the positron code and the webapp folders.
@@ -76,7 +76,7 @@ Once you hit enter, you will be asked for various options. Here are the recommen
 After inputing all the values, a project folder `positron/` will be generate. Go to that directory:
 
 ```
-$ cd positron/
+cd positron/
 ```
 
 Look into `positron/src/positron/app.py` you will see the positron app set up is actually a Togo app that created a web server and using the `toga.WebView()` to bring in the interface. Notice that the `DJANGO_SETTINGS_MODULE` is set to `webapp.webapp.settings`.
@@ -88,7 +88,7 @@ If you look into the `positron/src/webapp` folder, there is a typical Django pro
 When we start a Django project, this key is generated for us automatically, since we are using a template, we now have to generate this key ourself. For the purpose of this workshop, we will just use the build in methods in Django to do it (same method as when we start a new Django project). As a command it is:
 
 ```
-$ python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
 ```
 
 Copy the secret generated into the `SECRET_KEY` in `positron/src/webapp/webapp/settings.py`
@@ -96,7 +96,7 @@ Copy the secret generated into the `SECRET_KEY` in `positron/src/webapp/webapp/s
 Now, if you run:
 
 ```
-$ briefcase dev
+briefcase dev
 ```
 
 You should see the Django "rocket" running in your app. It means that the Django Positron is working.
@@ -112,8 +112,8 @@ From here, there are two options. We use the [Django tutorial app](https://docs.
 Go to `positron/src/webapp` and use the command:
 
 ```
-$ cd positron/src/webapp
-$ python -m manage.py startapp polls
+cd positron/src/webapp
+python manage.py startapp polls
 ```
 
 To add a new app `polls` and develop the Django tutorial app from there. You have to make sure that the module paths matches with the new project structure (see option 2 below)
@@ -135,7 +135,7 @@ If you are using the Django tutorial app, replace everything in the `webapp` fol
 Now, run the command:
 
 ```
-$ briefcase dev
+briefcase dev
 ```
 
 You should see the positron app bring you to the first page of your app.
