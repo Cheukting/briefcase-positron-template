@@ -23,10 +23,10 @@ In this workshop, we will focus on using briefcase to deploy our app. With Toga,
 
 ## Install the packages
 
-Assuming that you have [created and inside a virtual environment]((https://docs.beeware.org/en/latest/tutorial/tutorial-0.html)). We will install `briefcase`, `cookiecutter` and `Django`:
+Assuming that you have [created and inside a virtual environment]((https://docs.beeware.org/en/latest/tutorial/tutorial-0.html)). We will install `briefcase`, `toga`, `cookiecutter` and `Django`:
 
 ```
-$ python -m pip install briefcase cookiecutter Django
+$ python -m pip install briefcase toga cookiecutter Django
 ```
 
 ## Creating the project
